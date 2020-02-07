@@ -49,6 +49,17 @@ cs_add_executable(${PROJECT_NAME}_dense_pcl
 add_dependencies(${PROJECT_NAME}_dense_pcl ${${PROJECT_NAME}_EXPORTED_TARGETS}})
 target_link_libraries(${PROJECT_NAME}_dense_pcl ${catkin_LIBRARIES})
 
+################################################################################
+################################## main ros wrapper ############################
+# DENSE POINT CLOUD
+cs_add_executable(${PROJECT_NAME}_ros_wrapper
+    src/dense-pcl/main_ros_wrapper.cc)
+add_dependencies(${PROJECT_NAME}_ros_wrapper ${${PROJECT_NAME}_EXPORTED_TARGETS}})
+target_link_libraries(${PROJECT_NAME}_ros_wrapper ${catkin_LIBRARIES})
+#################################################################################
+#################################################################################
+
+
 # PIX4D GEOFILE EXPORTER
 cs_add_executable(${PROJECT_NAME}_export_pix4d_geofile
     src/util/main-generate-pix4d-geofile.cc)
